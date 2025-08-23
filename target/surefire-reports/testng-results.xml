@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-23T22:13:02 IST" name="Surefire suite" finished-at="2025-08-23T22:13:13 IST" duration-ms="10534">
+    <groups>
+    </groups>
+    <test started-at="2025-08-23T22:13:02 IST" name="Surefire test" finished-at="2025-08-23T22:13:13 IST" duration-ms="10534">
+      <class name="com.qa.tests.LoginTests">
+        <test-method is-config="true" signature="beforeTest(java.lang.String,java.lang.String)[pri:0, instance:com.qa.tests.LoginTests@17c1bced]" started-at="2025-08-23T22:13:02 IST" name="beforeTest" finished-at="2025-08-23T22:13:13 IST" duration-ms="10509" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[emulator-5554]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.saucelabs.mydemoapp.android' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command '/Users/anuragmingwal/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start-activity -W -n com.saucelabs.mydemoapp.android/com.saucelabs.mydemoapp.android.view.activities.MainActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 255'; Command output: 
+Exception occurred while executing 'start-activity':
+java.lang.SecurityException: Permission Denial: starting Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.saucelabs.mydemoapp.android/.view.activities.MainActivity } from null (pid=23616, uid=2000) not exported from uid 10200
+at com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1116)
+at com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1014)
+at com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:703)
+at com.android.server.wm.ActivityTaskManagerService.startActivityAndWait(ActivityTaskManagerService.java:1562)
+at com.android.server.am.ActivityManagerService.startActivityAndWait(ActivityManagerService.java:3165)
+at com.android.server.am.ActivityManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:600)
+at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:208)
+at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+at android.os.ShellCommand.exec(ShellCommand.java:38)
+at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:9285)
+at android.os.Binder.shellCommand(Binder.java:1049)
+at android.os.Binder.onTransact(Binder.java:877)
+at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:4731)
+at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2628)
+at android.os.Binder.execTransactInternal(Binder.java:1285)
+at android.os.Binder.execTransact(Binder.java:1244)
+ 
+Host info: host: 'Anurags-MacBook-Pro.local', ip: '2409:40d0:11f0:ecc6:14ba:58a8:9817:adfc%en0'
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.4.1', java.version: '17.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: /Users/anuragmingwal/Docume..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
+Capabilities {appium:app: /Users/anuragmingwal/Docume..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.saucelabs.mydemoapp.android' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command '/Users/anuragmingwal/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start-activity -W -n com.saucelabs.mydemoapp.android/com.saucelabs.mydemoapp.android.view.activities.MainActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 255'; Command output: 
+Exception occurred while executing 'start-activity':
+java.lang.SecurityException: Permission Denial: starting Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.saucelabs.mydemoapp.android/.view.activities.MainActivity } from null (pid=23616, uid=2000) not exported from uid 10200
+at com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1116)
+at com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1014)
+at com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:703)
+at com.android.server.wm.ActivityTaskManagerService.startActivityAndWait(ActivityTaskManagerService.java:1562)
+at com.android.server.am.ActivityManagerService.startActivityAndWait(ActivityManagerService.java:3165)
+at com.android.server.am.ActivityManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:600)
+at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:208)
+at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+at android.os.ShellCommand.exec(ShellCommand.java:38)
+at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:9285)
+at android.os.Binder.shellCommand(Binder.java:1049)
+at android.os.Binder.onTransact(Binder.java:877)
+at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:4731)
+at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2628)
+at android.os.Binder.execTransactInternal(Binder.java:1285)
+at android.os.Binder.execTransact(Binder.java:1244)
+ 
+Host info: host: 'Anurags-MacBook-Pro.local', ip: '2409:40d0:11f0:ecc6:14ba:58a8:9817:adfc%en0'
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.4.1', java.version: '17.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: /Users/anuragmingwal/Docume..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
+Capabilities {appium:app: /Users/anuragmingwal/Docume..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:308)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:98)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:109)
+at com.qa.BaseTest.beforeTest(BaseTest.java:60)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:657)
+at org.testng.TestRunner.beforeRun(TestRunner.java:646)
+at org.testng.TestRunner.run(TestRunner.java:612)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.tests.LoginTests@17c1bced]" started-at="2025-08-23T22:13:13 IST" name="beforeMethod" finished-at="2025-08-23T22:13:13 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="validuserName()[pri:0, instance:com.qa.tests.LoginTests@17c1bced]" started-at="2025-08-23T22:13:13 IST" name="validuserName" finished-at="2025-08-23T22:13:13 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.saucelabs.mydemoapp.android' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command '/Users/anuragmingwal/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start-activity -W -n com.saucelabs.mydemoapp.android/com.saucelabs.mydemoapp.android.view.activities.MainActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 255'; Command output: 
+Exception occurred while executing 'start-activity':
+java.lang.SecurityException: Permission Denial: starting Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.saucelabs.mydemoapp.android/.view.activities.MainActivity } from null (pid=23616, uid=2000) not exported from uid 10200
+at com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1116)
+at com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1014)
+at com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:703)
+at com.android.server.wm.ActivityTaskManagerService.startActivityAndWait(ActivityTaskManagerService.java:1562)
+at com.android.server.am.ActivityManagerService.startActivityAndWait(ActivityManagerService.java:3165)
+at com.android.server.am.ActivityManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:600)
+at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:208)
+at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+at android.os.ShellCommand.exec(ShellCommand.java:38)
+at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:9285)
+at android.os.Binder.shellCommand(Binder.java:1049)
+at android.os.Binder.onTransact(Binder.java:877)
+at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:4731)
+at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2628)
+at android.os.Binder.execTransactInternal(Binder.java:1285)
+at android.os.Binder.execTransact(Binder.java:1244)
+ 
+Host info: host: 'Anurags-MacBook-Pro.local', ip: '2409:40d0:11f0:ecc6:14ba:58a8:9817:adfc%en0'
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.4.1', java.version: '17.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: /Users/anuragmingwal/Docume..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
+Capabilities {appium:app: /Users/anuragmingwal/Docume..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.saucelabs.mydemoapp.android' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command '/Users/anuragmingwal/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start-activity -W -n com.saucelabs.mydemoapp.android/com.saucelabs.mydemoapp.android.view.activities.MainActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 255'; Command output: 
+Exception occurred while executing 'start-activity':
+java.lang.SecurityException: Permission Denial: starting Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.saucelabs.mydemoapp.android/.view.activities.MainActivity } from null (pid=23616, uid=2000) not exported from uid 10200
+at com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1116)
+at com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1014)
+at com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:703)
+at com.android.server.wm.ActivityTaskManagerService.startActivityAndWait(ActivityTaskManagerService.java:1562)
+at com.android.server.am.ActivityManagerService.startActivityAndWait(ActivityManagerService.java:3165)
+at com.android.server.am.ActivityManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:600)
+at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:208)
+at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+at android.os.ShellCommand.exec(ShellCommand.java:38)
+at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:9285)
+at android.os.Binder.shellCommand(Binder.java:1049)
+at android.os.Binder.onTransact(Binder.java:877)
+at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:4731)
+at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2628)
+at android.os.Binder.execTransactInternal(Binder.java:1285)
+at android.os.Binder.execTransact(Binder.java:1244)
+ 
+Host info: host: 'Anurags-MacBook-Pro.local', ip: '2409:40d0:11f0:ecc6:14ba:58a8:9817:adfc%en0'
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.4.1', java.version: '17.0.8'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: /Users/anuragmingwal/Docume..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}]}]
+Capabilities {appium:app: /Users/anuragmingwal/Docume..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, platformName: ANDROID}
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:308)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:98)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:109)
+at com.qa.BaseTest.beforeTest(BaseTest.java:60)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:657)
+at org.testng.TestRunner.beforeRun(TestRunner.java:646)
+at org.testng.TestRunner.run(TestRunner.java:612)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validuserName -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.qa.tests.LoginTests@17c1bced]" started-at="2025-08-23T22:13:13 IST" name="afterTest" finished-at="2025-08-23T22:13:13 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.qa.tests.LoginTests -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

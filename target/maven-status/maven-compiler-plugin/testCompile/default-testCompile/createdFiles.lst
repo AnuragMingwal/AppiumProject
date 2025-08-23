@@ -1,0 +1,5 @@
+com/qa/pages/LoginPage.class
+com/qa/tests/LoginTests.class
+com/qa/utils/TestUtils.class
+com/qa/BaseTest.class
+com/qa/pages/ProductPage.class
