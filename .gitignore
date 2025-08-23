@@ -1,0 +1,43 @@
+# Ignore Maven target directory
+target/
+
+# Ignore Gradle build
+build/
+
+# Ignore TestNG reports
+test-output/
+
+# Ignore Allure reports
+allure-results/
+allure-report/
+
+# Ignore Extent reports
+reports/
+Report/
+*.html
+
+# Ignore log files
+*.log
+
+# Ignore compiled class files
+*.class
+
+# Ignore package files
+*.jar
+*.war
+*.ear
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+out/
+
+# Ignore Eclipse project files
+.settings/
+.project
+.classpath
+bin/
