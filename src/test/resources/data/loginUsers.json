@@ -1,0 +1,17 @@
+{
+	"invalidUser": {
+		"username": "Anurag",
+		"password": " "
+	},
+	
+	"validUser": {
+		"username": "standard_user",
+		"password": "secret_sauce"	
+	
+	}
+	}
+	
+	
+	
+	
+

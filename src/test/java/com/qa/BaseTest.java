@@ -2,11 +2,14 @@ package com.qa;
 
 
 
+import com.qa.pages.LoginPage;
 import com.qa.utils.TestUtils;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+
+import java.net.MalformedURLException;
 import java.net.URL;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
@@ -15,6 +18,7 @@ import org.testng.annotations.Parameters;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Properties;
 
 import org.openqa.selenium.WebElement;
@@ -28,7 +32,11 @@ public class BaseTest {
  
 	protected static AppiumDriver driver;
 	protected static Properties prop;
+	
+	protected static HashMap<String, String> strings = new HashMap<String, String>();
 	InputStream ip ;
+	InputStream stringsis;
+	TestUtils utils ;
 	
 	
 	public BaseTest() {
@@ -39,12 +47,24 @@ public class BaseTest {
 	@Parameters({"platformName","deviceName"})
 	@BeforeTest
 	
-	public void beforeTest( String platformName,String deviceName) throws IOException {
+	public void beforeTest( String platformName,String deviceName)  {
 		
 		prop = new Properties();
 		String propFileName = "config.properties";
+		
 		ip = getClass().getClassLoader().getResourceAsStream(propFileName);
-		prop.load(ip);
+		try {
+			prop.load(ip);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		stringsis = getClass().getClassLoader().getResourceAsStream("strings/strings.xml");
+		
+		utils = new TestUtils();
+		strings = utils.parseStringXML(stringsis);
+
+		
 		
 		UiAutomator2Options androidOptions = new UiAutomator2Options();
 	      androidOptions.setPlatformName(platformName);
@@ -52,7 +72,28 @@ public class BaseTest {
 	      androidOptions.setAppPackage(prop.getProperty("appPackage"));
 	      androidOptions.setApp(System.getProperty("user.dir") + prop.getProperty("appLocation"));
 	      androidOptions.setAutomationName(prop.getProperty("automationName"));
-	      driver = new AppiumDriver(new URL(prop.getProperty("appiumUrl")), androidOptions);
+	      try {
+			driver = new AppiumDriver(new URL(prop.getProperty("appiumUrl")), androidOptions);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			
+			
+			
+		} finally {
+			try {
+				if (ip != null) {
+					ip.close();
+				}
+				if (stringsis != null) {
+					stringsis.close();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
 	     
 		
@@ -61,7 +102,7 @@ public class BaseTest {
 	
 	public void waitforVisibilty(WebElement e) {
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(TestUtils.Wait_TimeOut));
-		wait.until(ExpectedConditions.visibilityOf(e));
+		wait.until(ExpectedConditions.visibilityOf((WebElement) e));
 	}
 	
 	

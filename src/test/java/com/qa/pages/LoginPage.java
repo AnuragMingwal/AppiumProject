@@ -29,6 +29,7 @@ public LoginPage(AppiumDriver driver) {
 	
 	@AndroidFindBy (id ="com.saucelabs.mydemoapp.android:id/loginBtn") private   WebElement loginBtn; 
 	
+	@AndroidFindBy (id ="com.saucelabs.mydemoapp.android:id/passwordErrorTV") private   WebElement errorText;
 	
 	
 
@@ -46,6 +47,13 @@ public LoginPage enterpPassword(String password) {
 	
 	
 }
+
+
+
+public String getErrorText() {
+	return getText(errorText);
+}
+
 public ProductPage pressloginBtn() {
 	click(loginBtn);
 	return new ProductPage(driver);

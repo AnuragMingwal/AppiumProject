@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,6 +101,11 @@
                       <a href="#" panel-name="suite-Android_Suite" class="show-methods passed suite-Android_Suite"> (show)</a> <!-- show-methods passed suite-Android_Suite -->
                     </span>
                     <div class="method-list-content passed suite-Android_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Android_Suite" title="com.qa.tests.LoginTests" class="method navigator-link" hash-for-method="invaliduserName">invaliduserName</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Android_Suite" title="com.qa.tests.LoginTests" class="method navigator-link" hash-for-method="validuserName">validuserName</a> <!-- method navigator-link -->
@@ -126,6 +131,13 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="invaliduserName">
+                  </a> <!-- invaliduserName -->
+                  <span class="method-name">invaliduserName</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="validuserName">
                   </a> <!-- validuserName -->
                   <span class="method-name">validuserName</span>
@@ -143,6 +155,9 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Android Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.qa.listeners.TestListeners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Login Test on Android&quot;&gt;
     &lt;parameter name=&quot;platformName&quot; value=&quot;Android&quot;/&gt;
     &lt;parameter name=&quot;deviceName&quot; value=&quot;emulator-5554&quot;/&gt;
@@ -187,16 +202,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validuserName')
+data.setCell(0, 1, 'invaliduserName')
 data.setCell(0, 2, 'com.qa.tests.LoginTests')
-data.setCell(0, 3, 5432);
+data.setCell(0, 3, 4746);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validuserName')
+data.setCell(1, 2, 'com.qa.tests.LoginTests')
+data.setCell(1, 3, 3885);
 window.suiteTableData['Android_Suite']= { tableData: data, tableDiv: 'times-div-Android_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Android_Suite">
               </div> <!-- times-div-Android_Suite -->
             </div> <!-- times-div -->
@@ -227,17 +246,29 @@ return data;
                 <span class="method-name">beforeTest(Android, emulator-5554)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">5389 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod(public void com.qa.tests.LoginTests.invaliduserName())</span>
+                <span class="method-start">5400 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invaliduserName</span>
+                <span class="method-start">5651 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod(public void com.qa.tests.LoginTests.validuserName())</span>
-                <span class="method-start">3941 ms</span>
+                <span class="method-start">10399 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validuserName</span>
-                <span class="method-start">4149 ms</span>
+                <span class="method-start">10400 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">9588 ms</span>
+                <span class="method-start">14295 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
