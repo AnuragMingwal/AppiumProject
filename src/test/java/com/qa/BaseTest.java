@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -172,16 +173,31 @@ public class BaseTest {
 //    }
 
 	
-	public WebElement scrollToElement() {
+	public void scrollToElement() {
 		
 
-		
-		return driver.findElement(AppiumBy.androidUIAutomator(
-			    "new UiScrollable(new UiSelector().scrollable(true))" +
-			    ".scrollIntoView(new UiSelector().resourceId(\"com.saucelabs.mydemoapp.android:id/priceTV\"));"
-			));
+		Map<String, Object> params = new HashMap<>();
+	    params.put("strategy", "-android uiautomator");
+	    params.put("selector", "new UiSelector().resourceId(\"com.saucelabs.mydemoapp.android:id/productHeightLightsTV\")");
+	    params.put("maxScrolls", 5);
+
+	    driver.executeScript("mobile: scroll", params);
+	    
 		
 	}
+	
+	
+	
+	
+//	public void scrollToElement(String strategy, String selector, int maxScrolls) {
+//        Map<String, Object> params = new HashMap<>();
+//        params.put("strategy", strategy);
+//        params.put("selector", selector);
+//        params.put("maxScrolls", maxScrolls);
+//
+//        driver.executeScript("mobile: scroll", params);
+//    }
+	
 	
 	
 	

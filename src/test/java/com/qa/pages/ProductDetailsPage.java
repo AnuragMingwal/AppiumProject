@@ -31,7 +31,7 @@ public class ProductDetailsPage extends MenuPage {
 	}
 	
 	public  ProductDetailsPage  scrollToPrize() {
-		       scrollToElement();
+		scrollToElement();
 			return this;
      
     }

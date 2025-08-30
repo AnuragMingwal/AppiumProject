@@ -12,7 +12,6 @@
         <methods>
           <include name="afterTest"/>
           <include name="beforeClass"/>
-          <include name="validateProductOnProductsPage"/>
           <include name="validProductsOnProductsDetailPage"/>
           <include name="beforeTest"/>
           <include name="beforeMethod"/>
