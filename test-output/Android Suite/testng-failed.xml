@@ -4,20 +4,20 @@
   <listeners>
     <listener class-name="com.qa.listeners.TestListeners"/>
   </listeners>
-  <test thread-count="5" name="Login Test on Android(failed)">
+  <test thread-count="5" name="Login Test on Andorid (failed)">
     <parameter name="platformName" value="Android"/>
     <parameter name="deviceName" value="emulator-5554"/>
     <classes>
-      <class name="com.qa.tests.LoginTests">
+      <class name="com.qa.tests.ProductTests">
         <methods>
-          <include name="beforeMethod"/>
           <include name="afterTest"/>
-          <include name="validuserName"/>
           <include name="beforeClass"/>
+          <include name="validateProductOnProductsPage"/>
+          <include name="validProductsOnProductsDetailPage"/>
           <include name="beforeTest"/>
-          <include name="invaliduserName"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.qa.tests.LoginTests -->
+      </class> <!-- com.qa.tests.ProductTests -->
     </classes>
-  </test> <!-- Login Test on Android(failed) -->
+  </test> <!-- Login Test on Andorid (failed) -->
 </suite> <!-- Failed suite [Android Suite] -->

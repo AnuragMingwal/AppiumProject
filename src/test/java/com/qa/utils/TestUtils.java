@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 
 public class TestUtils {
-	public static final long Wait_TimeOut = 10; 
+	public static final long Wait_TimeOut = 30; 
 	
 	public HashMap<String, String> parseStringXML(InputStream file) {
         HashMap<String, String> map = new HashMap<>();

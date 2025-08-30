@@ -2,4 +2,18 @@
 <resources>
     <string name = "popup_Text" >Enter Password</string>
     <string name = "product_Title" >Products</string>
+    
+    
+    <!-- product page -->
+  
+    <string name = "product_page_slb_title" >Sauce Labs Backpack</string>
+    <string name = "product_page_slb_price" >$29.99</string>
+    
+    
+     <!-- product Details  page -->
+     
+     <string name = "product_details_page_slb_title" >Sauce Labs Backpack</string>
+    <string name = "product_details_page_slb_price" >$29.99</string>
+    
+    <string name = "product_details-page_slb_description" >carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.</string>
 </resources>

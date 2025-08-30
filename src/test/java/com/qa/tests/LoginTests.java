@@ -14,16 +14,21 @@ import org.testng.annotations.Test;
 
 
 import com.qa.BaseTest;
+import com.qa.MenuPage;
 import com.qa.pages.LoginPage;
 import com.qa.pages.ProductPage;
+import com.qa.pages.SettingsPage;
 
 public class LoginTests extends BaseTest{
 	
 	
 	LoginPage loginPage;
+	MenuPage menuPage;
+	SettingsPage settingsPage;
 	ProductPage productPage;
 	InputStream datais;
 	JSONObject loginUsers;
+	
 	
 	
 	
@@ -50,6 +55,7 @@ public class LoginTests extends BaseTest{
 			}
 			
 			
+			
 
 		}
 	
@@ -57,7 +63,7 @@ public class LoginTests extends BaseTest{
   public void validuserName() {
 	  
 	 
-	  loginPage.pressMenuBtn();
+	  menuPage.pressMenuBtn();
 	  loginPage.pressLogintext();
 	  
 	  loginPage.enterUserName(loginUsers.getJSONObject("validUser").getString("username"));
@@ -78,7 +84,7 @@ public class LoginTests extends BaseTest{
   @Test
 	public void invaliduserName() {
 	  	
-	  	loginPage.pressMenuBtn();
+	    menuPage.pressMenuBtn();
 	  	loginPage.pressLogintext();
 		loginPage.enterUserName(loginUsers.getJSONObject("invalidUser").getString("username"));
 		loginPage.enterpPassword(loginUsers.getJSONObject("invalidUser").getString("password"));
@@ -92,12 +98,24 @@ public class LoginTests extends BaseTest{
 	}
   
   
+  @AfterClass
   
+	public void afterMethod() {
+	  if (productPage != null) {
+	     settingsPage = menuPage.pressMenuBtn();
+		loginPage = settingsPage.pressLogoutBtn();
+		loginPage = settingsPage.pressLogoutYesBtn();
+	  } else {
+	        System.out.println("No valid login happened, skipping logout.");
+	    }
+	}
   
   
   @BeforeMethod
   public void beforeMethod(Method m) {
 	  loginPage = new LoginPage(driver);
+	  menuPage = new MenuPage(driver);
+	  
 	  System.out.println("\n"+ "************ Starting Test *********" + m.getName()+"**************"+"\n");
 	  
 	  

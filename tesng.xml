@@ -5,13 +5,15 @@
 	<listener class-name="com.qa.listeners.TestListeners"/>
 	</listeners>
   
-  <test name="Login Test on Android">
+  <test name="Login Test on Andorid ">
     <parameter name="platformName" value="Android"/>
     <parameter name="deviceName" value="emulator-5554"/>
     
 
     <classes>
-      <class name="com.qa.tests.LoginTests"/>
+	<class name="com.qa.tests.LoginTests"/>
+      <class name="com.qa.tests.ProductTests"/>
+      
     </classes>
   </test>
 
