@@ -79,9 +79,9 @@ public class ProductTests extends BaseTest{
 	  
 	  String actualslbTitle = productPage.getslbTitle();
 	  
-	  softAssert.assertEquals(actualslbTitle, strings.get("product_page_slb_title"), "SLB Title does not match");
+	  softAssert.assertEquals(actualslbTitle, getStrings().get("product_page_slb_title"), "SLB Title does not match");
 	  String actualslbPrice = productPage.getslbPrice().replaceAll("\\s+", "");
-	  softAssert.assertEquals(actualslbPrice, strings.get("product_page_slb_price").replaceAll("\\s+", ""), "SLB Price does not match");
+	  softAssert.assertEquals(actualslbPrice, getStrings().get("product_page_slb_price").replaceAll("\\s+", ""), "SLB Price does not match");
 	  
 	  
 	//  settingsPage	= productPage.pressMenuBtn();
@@ -115,11 +115,11 @@ public class ProductTests extends BaseTest{
 	  
 	  productDetailsPage = productPage.presslbTitle();
 	  String actualslbTitle = productDetailsPage.getslbTitle();
-	  softAssert.assertEquals(actualslbTitle, strings.get("product_details_page_slb_title"), "SLB Title does not match");
+	  softAssert.assertEquals(actualslbTitle, getStrings().get("product_details_page_slb_title"), "SLB Title does not match");
 	  productDetailsPage.scrollToPrize();
 	  
 	  String actualslbTxt = productDetailsPage.getslbText();
-	  softAssert.assertEquals(actualslbTxt, strings.get("product_details_page_slb_description"), "SLB Price does not match");
+	  softAssert.assertEquals(actualslbTxt, getStrings().get("product_details_page_slb_description"), "SLB Price does not match");
 	  
 	  
 	    settingsPage = productPage.pressMenuBtn();
@@ -136,8 +136,8 @@ public class ProductTests extends BaseTest{
   
   @BeforeMethod
   public void beforeMethod(Method m) {
-	  loginPage = new LoginPage(driver);
-	   menuPage = new MenuPage(driver);
+	  loginPage = new LoginPage(getDriver());
+	   menuPage = new MenuPage(getDriver());
 	  System.out.println("\n"+ "************ Starting Test *********" + m.getName()+"**************"+"\n");
 	  
 	  

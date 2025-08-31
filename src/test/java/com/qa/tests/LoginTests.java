@@ -72,7 +72,7 @@ public class LoginTests extends BaseTest{
 	  
 	  String actualText = productPage.getTitle();
 	  System.out.println(actualText);
-	  String expectedtext =  strings.get("product_Title");
+	  String expectedtext =  getStrings().get("product_Title");
 	  Assert.assertEquals(actualText, expectedtext);
 	  
 	  
@@ -92,7 +92,7 @@ public class LoginTests extends BaseTest{
 
 		String actualError = loginPage.getErrorText();
 		System.out.println(actualError);
-		String expectedError = strings.get("popup_Text");
+		String expectedError = getStrings().get("popup_Text");
 		Assert.assertEquals(actualError, expectedError);
 
 	}
@@ -113,8 +113,8 @@ public class LoginTests extends BaseTest{
   
   @BeforeMethod
   public void beforeMethod(Method m) {
-	  loginPage = new LoginPage(driver);
-	  menuPage = new MenuPage(driver);
+	  loginPage = new LoginPage(getDriver());
+	  menuPage = new MenuPage(getDriver());
 	  
 	  System.out.println("\n"+ "************ Starting Test *********" + m.getName()+"**************"+"\n");
 	  

@@ -24,11 +24,11 @@ public class SettingsPage extends BaseTest {
 	
 	public LoginPage  pressLogoutBtn() {
 		click(logout);
-		return new LoginPage(driver);
+		return new LoginPage(getDriver());
 	}	
 	public LoginPage  pressLogoutYesBtn() {
 		click(logoutYes);
-		return new LoginPage(driver);
+		return new LoginPage(getDriver());
 	}
 	
 }

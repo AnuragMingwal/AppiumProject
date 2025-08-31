@@ -35,16 +35,55 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class BaseTest {
  
-	protected static AppiumDriver driver;
-	protected static Properties prop;
-	protected static String platform;
+	protected static ThreadLocal<AppiumDriver> driver = new ThreadLocal<AppiumDriver>();
+	protected static  ThreadLocal<Properties> prop = new ThreadLocal<Properties>();
+	protected static ThreadLocal <String> platform = new ThreadLocal<String>();
 	
 	
-	protected static HashMap<String, String> strings = new HashMap<String, String>();
-	InputStream ip ;
-	InputStream stringsis;
+	
+	protected static ThreadLocal <HashMap<String, String>> strings = new ThreadLocal< HashMap<String, String>>();
+	
 	TestUtils utils ;
 	
+	public AppiumDriver getDriver() {
+		System.out.println("Driver value is: " + driver);
+		
+		return driver.get();
+	}
+	
+	
+	public Properties getProp() {
+		return prop.get();
+	}
+	
+	public void setProp(Properties prop2) {
+		prop.set(prop2);
+	}
+	
+	public void setDriver(AppiumDriver driver2) {
+		driver.set(driver2);
+	}
+	
+	
+	
+	public HashMap<String, String> getStrings() {
+		return strings.get();
+	}
+	
+	
+	public void setStrings(HashMap<String, String> strings2) {
+		strings.set(strings2);
+	}
+	
+	
+	
+	public String getPlatform() {
+		return platform.get();
+	}
+	
+	public void  setPlatform(String platform2) {
+		platform.set(platform2);
+	}
 	
 	public BaseTest() {
 		//PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -55,21 +94,23 @@ public class BaseTest {
 	@BeforeTest
 	
 	public void beforeTest( String platformName,String deviceName) throws Exception {
-		platform = platformName;
+		setPlatform(platformName);
+		InputStream ip ;
+		InputStream stringsis = null;
+		Properties prop = new Properties();
+		AppiumDriver driver;
 		prop = new Properties();
 		String propFileName = "config.properties";
+		
 		
 		ip = getClass().getClassLoader().getResourceAsStream(propFileName);
 		try {
 			prop.load(ip);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+            setProp(prop);
 		stringsis = getClass().getClassLoader().getResourceAsStream("strings/strings.xml");
 		
 		utils = new TestUtils();
-		strings = utils.parseStringXML(stringsis);
+		setStrings(utils.parseStringXML(stringsis));
 
 		
 		
@@ -106,7 +147,7 @@ public class BaseTest {
                      
 	            	  
 	      }  
-	            	  
+	            	  setDriver(driver);
 	      }catch (Exception e) {
 	    	  e.printStackTrace();
 	      }
@@ -131,14 +172,14 @@ public class BaseTest {
 	
 	
 	public void waitforVisibilty(WebElement e) {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(TestUtils.Wait_TimeOut));
+		WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(TestUtils.Wait_TimeOut));
 		wait.until(ExpectedConditions.visibilityOf((WebElement) e));
 	}
 	
 	
 	
 	public void waitforClickablity(WebElement e) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtils.Wait_TimeOut));
+		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(TestUtils.Wait_TimeOut));
 		wait.until(ExpectedConditions.elementToBeClickable((WebElement) e));
 	}
 	
@@ -150,11 +191,7 @@ public class BaseTest {
 	}
 	
 	
-	public AppiumDriver getDriver() {
-		System.out.println("Driver value is: " + driver);
-		
-		return driver;
-	}
+	
 	
 	public void sendkeys(WebElement e, String text) {
 		waitforVisibilty(e);
@@ -181,28 +218,19 @@ public class BaseTest {
 	    params.put("selector", "new UiSelector().resourceId(\"com.saucelabs.mydemoapp.android:id/productHeightLightsTV\")");
 	    params.put("maxScrolls", 5);
 
-	    driver.executeScript("mobile: scroll", params);
+	    getDriver().executeScript("mobile: scroll", params);
 	    
 		
 	}
 	
 	
-	
-	
-//	public void scrollToElement(String strategy, String selector, int maxScrolls) {
-//        Map<String, Object> params = new HashMap<>();
-//        params.put("strategy", strategy);
-//        params.put("selector", selector);
-//        params.put("maxScrolls", maxScrolls);
-//
-//        driver.executeScript("mobile: scroll", params);
-//    }
+
 	
 	
 	
 	
 	public  String getText(WebElement e) {
-		switch (platform) {
+		switch (getPlatform()) {
 		case "Android":
 			return getAttribute(e, "text");
 			
@@ -240,6 +268,7 @@ public void closeApp() {
 	@AfterTest
 	
 	public void afterTest() {
+		getDriver().quit();
 		
 	}
 
